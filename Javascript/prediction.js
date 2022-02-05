@@ -2,6 +2,7 @@ let button = document.getElementById("button");
 let img_url = 'https://dog.ceo/api/breeds/image/random';
 
 button.addEventListener("click",function(){
+   
     let first_name = document.getElementById("firstname");
     first_name = first_name.value;
     let gender_url = 'https://api.genderize.io/?name=';
@@ -10,6 +11,9 @@ button.addEventListener("click",function(){
     gender_url+=first_name;
     age_url+=first_name;
     nationality_url+=first_name;
+    document.getElementById("Gender").textContent = "Gender: ";
+    document.getElementById("Age").textContent = "Age: ";
+    document.getElementById("Nationality").textContent = "Nationality: ";
     getGenderApi(gender_url);
     getAgeApi(age_url);
     getNatonalityApi(nationality_url);
@@ -19,6 +23,7 @@ async function getImageApi(url){
     const response = await fetch(url);
     const image = await response.json();
     document.getElementById("DogImage").src = image.message;
+    condition = false;
 }
 document.addEventListener("onload", getImageApi(img_url));
 
