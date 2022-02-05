@@ -37,5 +37,9 @@ async function getAgeApi(url){
 async function getNatonalityApi(url){
     const response = await fetch(url);
     const name = await response.json();
-    document.getElementById("Nationality").innerHTML = name.country[0];
+    let countries = name.country
+    let nationalities = countries.map(function(element){
+        return element.country_id;
+    });
+    document.getElementById("Nationality").innerHTML = nationalities;
 }
