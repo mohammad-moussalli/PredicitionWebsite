@@ -25,13 +25,13 @@ document.addEventListener("onload", getImageApi(img_url));
 async function getGenderApi(url){
     const response = await fetch(url);
     const name = await response.json();
-    document.getElementById("Gender").innerHTML = name.gender;
+    document.getElementById("Gender").textContent += name.gender;
 }
 
 async function getAgeApi(url){
     const response = await fetch(url);
     const name = await response.json();
-    document.getElementById("Age").innerHTML = name.age;
+    document.getElementById("Age").textContent += name.age;
 }
 
 async function getNatonalityApi(url){
@@ -41,5 +41,5 @@ async function getNatonalityApi(url){
     let nationalities = countries.map(function(element){
         return element.country_id;
     });
-    document.getElementById("Nationality").innerHTML = nationalities;
+    document.getElementById("Nationality").textContent += nationalities;
 }
