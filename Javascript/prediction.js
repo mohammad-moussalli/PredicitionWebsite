@@ -1,25 +1,41 @@
-let first_name = document.getElementById("firstname");
 let button = document.getElementById("button");
-
-
 let img_url = 'https://dog.ceo/api/breeds/image/random';
 
-let urls = [
-    'https://api.genderize.io/?name=caline',
-    'https://api.agify.io/?name=joe',
-    'https://api.nationalize.io/?name=mohamad'
-];
+button.addEventListener("click",function(){
+    let first_name = document.getElementById("firstname");
+    first_name = first_name.value;
+    let gender_url = 'https://api.genderize.io/?name=';
+    let age_url = 'https://api.agify.io/?name=';
+    let nationality_url = 'https://api.nationalize.io/?name=';
+    gender_url+=first_name;
+    age_url+=first_name;
+    nationality_url+=first_name;
+    getGenderApi(gender_url);
+    getAgeApi(age_url);
+    getNatonalityApi(nationality_url);
+});
 
-async function getApi(url) {
-    
+async function getImageApi(url){
     const response = await fetch(url);
     const image = await response.json();
-    show(image);
+    document.getElementById("DogImage").src = image.message;
+}
+document.addEventListener("onload", getImageApi(img_url));
+
+async function getGenderApi(url){
+    const response = await fetch(url);
+    const name = await response.json();
+    document.getElementById("Gender").innerHTML = name.gender;
 }
 
-function show(data) {
-    const random = Math.floor(Math.random()*100);
-    document.getElementById("DogImage").src = data.message;
+async function getAgeApi(url){
+    const response = await fetch(url);
+    const name = await response.json();
+    document.getElementById("Age").innerHTML = name.age;
 }
 
-document.addEventListener("onload", getApi(img_url));
+async function getNatonalityApi(url){
+    const response = await fetch(url);
+    const name = await response.json();
+    document.getElementById("Nationality").innerHTML = name.country[0];
+}
