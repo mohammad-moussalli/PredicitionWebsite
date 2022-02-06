@@ -15,8 +15,6 @@ img{
     align-items: flex-end;
     display: flex;
     border-radius: 50%;
-
-
 }
 
 #Image{
@@ -62,8 +60,7 @@ h3{
     cursor: pointer;
     border-radius: 20px;
     font-family: Ubuntu;
-    font-weight: 700;
-    
+    font-weight: 700; 
 }
 
 #button:hover{
@@ -155,7 +152,6 @@ input[type=text]{
 }
 
 @media only screen and (max-width:770px){
-
     h1{
         font-size: 275%;
         margin-top: 200px;
