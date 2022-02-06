@@ -43,7 +43,6 @@ h3{
     color: rgb(255, 255, 255);
     font-family: Ubuntu;
     font-weight: 700;
-    padding-left: 12px;
     margin: 0px;
     margin-left: 15px;
 }
@@ -112,4 +111,82 @@ input[type=text]{
 
 #Nationality{
     padding: 5px;
+}
+
+@media only screen and (max-width:1000px){
+    h1{
+        font-size: 350%;
+        margin-top: 175px;
+    }
+
+    img{
+        width: 400px;
+        height: 400px;
+    }
+    
+    #Image{
+        margin-top: 150px;
+    }
+
+    #button{
+        padding: 8px 16px;
+    }
+
+    input[type=text]{
+        width: 50%;
+        padding: 8px 16px;
+    }
+}
+
+@media only screen and (max-width:850px){
+    img{
+        width: 350px;
+        height: 350px;
+    }
+
+    h1{
+        font-size: 300%;
+        margin-top: 200px;
+    }
+
+    #Image{
+        margin-top: 175px;
+    }
+}
+
+@media only screen and (max-width:770px){
+
+    h1{
+        font-size: 275%;
+        margin-top: 200px;
+    }
+}
+
+
+@media only screen and (max-width:700px){
+    img{
+        width: 300px;
+        height: 300px;
+    }
+
+    h1{
+        font-size: 250%;
+        margin-top: 50px;
+    }
+
+    #Image{
+        margin-top: 50px;
+    }
+
+    h3{
+        font-size: medium;
+    }
+
+    .flexBackground{
+       flex-direction: column;
+    }
+
+    input[type=text]{
+        width: 70%;
+    }
 }
