@@ -6,22 +6,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Prediciton Website</title>
         <link rel="stylesheet" href="CSS/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
     </head>
-    <body>
-        <div id="Header">
-            <h1>Pridict your Gender, Age and Nationality</h1>
+    <body class="flexBackground redBackgroundColor">
+        
+        <div class="Column1 redBackgroundColor">
+            <div id="Header" class="center">
+                <h1>Predict your Gender, Age and Nationality</h1>
+            </div>
+            <div class = "Input">
+                <h3>Please enter your First Name: </h3>
+                <input type="text" id="firstname"> 
+                <button type="button" id="button">Submit</button>
+            </div>
+            <div class="output">
+                <div id="Gender"></div>
+                <div id="Age"></div>
+                <div id="Nationality"></div>
+            </div>
+            
         </div>
-        <div id="Image">
-            <img id="DogImage" alt="dog"/>
+
+        <div class="Column2">
+            <div id="Image">
+                <img id="DogImage" alt="dog"/>
+            </div>
         </div>
-        <div class = "Input">
-            <h5>Please enter your First Name: </h5>
-            <input type="text" id="firstname"> 
-            <button type="button" id="button">Submit</button>
-        </div>
-        <div id="Gender"></div>
-        <div id="Age"></div>
-        <div id="Nationality"></div>
+        
+        
 
         <script src="Javascript/prediction.js"></script>
     </body>
