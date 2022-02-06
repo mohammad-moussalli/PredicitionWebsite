@@ -190,3 +190,64 @@ input[type=text]{
         width: 70%;
     }
 }
+
+@media only screen and (max-width:450px){
+    img{
+        width: 300px;
+        height: 300px;
+    }
+
+    h1{
+        font-size: 200%;
+    }
+
+    #Image{
+        margin-top: 50px;
+    }
+
+    h3{
+        font-size: medium;
+    }
+
+    input[type=text]{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width:350px){
+    img{
+        width: 250px;
+        height: 250px;
+    }
+
+    h1{
+        font-size: 150%;
+    }
+
+    input[type=text]{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width:300px){
+    img{
+        width: 200px;
+        height: 200px;
+    }
+
+    h1{
+        font-size: 140%;
+    }
+
+    input[type=text]{
+        width: 40%;
+    }
+
+    #Image{
+        margin-top: 20px;
+    }
+
+    h3{
+        font-size:small;
+    }
+}
