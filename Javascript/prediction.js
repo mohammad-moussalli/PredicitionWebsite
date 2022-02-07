@@ -23,7 +23,6 @@ async function getImageApi(url){
     const response = await fetch(url);
     const image = await response.json();
     document.getElementById("DogImage").src = image.message;
-    condition = false;
 }
 document.addEventListener("onload", getImageApi(img_url));
 
