@@ -11,40 +11,39 @@ button.click(function(){
     gender_url+=first_name;
     age_url+=first_name;
     nationality_url+=first_name;
+    function getGenderApi(){
+        $.ajax({type: 'GET', url: gender_url, success: function(url){
+            $('#Gender').append(url.gender);
+          }});
+    }
+    function getAgeApi(){
+        $.ajax({type: 'GET', url: age_url, success: function(url){
+            $('#Age').append(url.age);
+        }});
+    }
+    function getNationalityApi(){
+        $.ajax({type: 'GET', url: nationality_url, success: function(url){
+            let countries = url.country;
+            let nationalities = countries.map(function(element){
+                return element.country_id;
+            })
+            $('#Nationality').append(nationalities);
+        }});
+    }
     $("#Gender").text("Gender: ");
     $("#Age").text("Age: ");
     $("#Nationality").text("Nationality: ");
-    getGenderApi(gender_url);
-    getAgeApi(age_url);
-    getNatonalityApi(nationality_url);
+    getGenderApi();
+    getAgeApi();
+    getNationalityApi();
+});
+
+$(window).on("load", function(){
+    $.ajax({type: 'GET', url: img_url, success: function(url){
+      $('img').attr("src",url.message);
+    }});
 });
 
 
 
-$.on("load",function(){
-    $.ajax({url: img_url, success: function(result){
-      $("#DogImage").attr("src",result);
-    }});
-  });
 
-async function getGenderApi(url){
-    const response = await fetch(url);
-    const name = await response.json();
-    document.getElementById("Gender").textContent += name.gender;
-}
-
-async function getAgeApi(url){
-    const response = await fetch(url);
-    const name = await response.json();
-    document.getElementById("Age").textContent += name.age;
-}
-
-async function getNatonalityApi(url){
-    const response = await fetch(url);
-    const name = await response.json();
-    let countries = name.country
-    let nationalities = countries.map(function(element){
-        return element.country_id;
-    });
-    document.getElementById("Nationality").textContent += nationalities;
-}
